@@ -1,7 +1,7 @@
 package com.example.itunesgrabber.ui.view
 
-import android.app.Application
 import androidx.annotation.Keep
+import androidx.multidex.MultiDexApplication
 import com.example.itunesgrabber.di.AppModule
 import com.example.itunesgrabber.di.CacheModule
 import com.example.itunesgrabber.di.RemoteModule
@@ -21,7 +21,7 @@ import javax.inject.Singleton
  * @since 20200313 v1
  */
 @Keep
-class App : Application() {
+class App : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()

@@ -8,7 +8,7 @@ import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import okhttp3.Cache
-import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -38,12 +38,16 @@ object ServiceGenerator {
     /** создаём экземпляр базового интерфейса ApiService */
     @UnstableDefault
     private fun makeRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        val contentType = "application/json".toMediaType()
+        //TO SUPPORT ANDROID SDK under 21 need to use deprecated syntax of MediaParsing
+        val contentType = MediaType.parse("application/json; charset=utf-8")
         val jsonConfig = JsonConfiguration(ignoreUnknownKeys = true)
         return Retrofit.Builder()
             .baseUrl(BuildConfig.SERVER_URL)
-            .client(okHttpClient)
-            .addConverterFactory(Json(jsonConfig).asConverterFactory(contentType))
+            .client(okHttpClient).apply {
+                contentType?.let { jsonType ->
+                    this.addConverterFactory(Json(jsonConfig).asConverterFactory(jsonType))
+                }
+            }
             .build()
     }
 

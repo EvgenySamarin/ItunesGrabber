@@ -33,7 +33,9 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/padding_16dp"
-                android:paddingEnd="@dimen/padding_16dp">
+                android:paddingLeft="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp"
+                android:paddingRight="@dimen/padding_16dp">
 
                 <TextView
                     style="@style/TextHeader"
@@ -46,6 +48,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_marginLeft="@dimen/margin_8dp"
                     android:layout_weight="1"
                     android:ellipsize="none"
                     android:singleLine="false"
@@ -58,7 +61,9 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/padding_16dp"
-                android:paddingEnd="@dimen/padding_16dp">
+                android:paddingLeft="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp"
+                android:paddingRight="@dimen/padding_16dp">
 
                 <TextView
                     style="@style/TextHeader"
@@ -71,6 +76,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_marginLeft="@dimen/margin_8dp"
                     android:layout_weight="1"
                     app:mutableText="@{viewModel.releaseDate}" />
             </LinearLayout>
@@ -81,7 +87,9 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/padding_16dp"
-                android:paddingEnd="@dimen/padding_16dp">
+                android:paddingLeft="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp"
+                android:paddingRight="@dimen/padding_16dp">
 
                 <TextView
                     style="@style/TextHeader"
@@ -94,6 +102,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_marginLeft="@dimen/margin_8dp"
                     android:layout_weight="1"
                     app:mutableText="@{viewModel.primaryGenreName}" />
             </LinearLayout>
@@ -104,7 +113,9 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/padding_16dp"
-                android:paddingEnd="@dimen/padding_16dp">
+                android:paddingLeft="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp"
+                android:paddingRight="@dimen/padding_16dp">
 
                 <TextView
                     style="@style/TextHeader"
@@ -117,6 +128,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_marginLeft="@dimen/margin_8dp"
                     android:layout_weight="1"
                     app:mutableText="@{viewModel.artistName}" />
             </LinearLayout>
@@ -130,6 +142,7 @@
                     android:layout_width="@dimen/size_60dp"
                     android:layout_height="@dimen/size_60dp"
                     android:layout_marginStart="@dimen/margin_16dp"
+                    android:layout_marginLeft="@dimen/margin_16dp"
                     android:contentDescription="@string/DESC_SITE_ARTIST"
                     android:src="@drawable/ic_public_black_24dp"
                     android:theme="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -140,6 +153,7 @@
                     android:layout_width="@dimen/size_60dp"
                     android:layout_height="@dimen/size_60dp"
                     android:layout_marginStart="@dimen/margin_16dp"
+                    android:layout_marginLeft="@dimen/margin_16dp"
                     android:contentDescription="@string/DESC_SITE_COLLECTION"
                     android:src="@drawable/ic_album_black_24dp"
                     android:theme="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -154,7 +168,9 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/padding_16dp"
-                android:paddingEnd="@dimen/padding_16dp">
+                android:paddingLeft="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp"
+                android:paddingRight="@dimen/padding_16dp">
 
                 <TextView
                     style="@style/TextHeader"
@@ -167,6 +183,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_marginLeft="@dimen/margin_8dp"
                     android:layout_weight="1"
                     app:mutableText='@{viewModel.trackCount}' />
             </LinearLayout>
@@ -177,7 +194,9 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingStart="@dimen/padding_16dp"
-                android:paddingEnd="@dimen/padding_16dp">
+                android:paddingLeft="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp"
+                android:paddingRight="@dimen/padding_16dp">
 
                 <TextView
                     style="@style/TextHeader"
@@ -190,6 +209,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_marginLeft="@dimen/margin_8dp"
                     app:mutableText="@{viewModel.collectionPrice}" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -197,9 +217,10 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_marginLeft="@dimen/margin_8dp"
                     android:layout_weight="1"
-                    app:mutableText="@{viewModel.currency}"
-                    android:textColor="@color/text_accent" />
+                    android:textColor="@color/text_accent"
+                    app:mutableText="@{viewModel.currency}" />
             </LinearLayout>
 
             <!-- copyright -->
@@ -207,8 +228,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_48dp"
                 android:gravity="center"
-                app:mutableText="@{viewModel.copyright}"
-                android:textSize="@dimen/text_size_12sp" />
+                android:paddingLeft="@dimen/padding_16dp"
+                android:paddingRight="@dimen/padding_16dp"
+                android:textSize="@dimen/text_size_12sp"
+                app:mutableText="@{viewModel.copyright}" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>
