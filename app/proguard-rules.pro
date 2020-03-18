@@ -23,4 +23,18 @@
 # для сохранения зависимостей уровня Dagger используется аннотация @Keep
 # В текущем файле правила для классов dagger отсутствуют
 
+# to keep kotlinx serializations
+-keepattributes InnerClasses
+-keepattributes *Annotation*, InnerClasses
+-dontnote kotlinx.serialization.SerializationKt
+-keep,includedescriptorclasses class com.example.itunesgrabber.**$$serializer { *; }
+
+-keep class kotlin.reflect.** { *; }
+-dontwarn kotlin.reflect.**
+-keep class org.jetbrains.** { *; }
+
+# Data Binding
+-dontwarn android.databinding.**
+-keep class android.databinding.** { *; }
+
 # keep actionView classes here
