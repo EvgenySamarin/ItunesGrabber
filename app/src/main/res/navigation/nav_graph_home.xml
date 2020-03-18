@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/albums_dest">
+
+    <fragment
+        android:id="@+id/albums_dest"
+        android:name="com.example.itunesgrabber.ui.view.home.fragments.AlbumsFragment"
+        android:label="@string/TITLE_TOOLBAR_ALBUMS"
+        tools:layout="@layout/fragment_home_albums">
+        <action
+            android:id="@+id/action_albums_dest_to_album_detail_dest"
+            app:destination="@id/album_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/album_detail_dest"
+        android:name="com.example.itunesgrabber.ui.view.home.fragments.AlbumDetailFragment"
+        android:label="@string/TITLE_TOOLBAR_ALBUM_DETAIL"
+        tools:layout="@layout/fragment_home_album_detail">
+        <argument
+            android:name="collectionId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>

@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Splash theme -->
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/ic_splash_screen</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <!-- tabs style -->
+    <style name="NavigationTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+    </style>
+
+    <!-- text styles -->
+    <style name="TextHeader">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/text_base</item>
+        <item name="android:textSize">@dimen/text_size_18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextBody1">
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="singleLine">true</item>
+        <item name="android:textSize">@dimen/text_size_16sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+</resources>

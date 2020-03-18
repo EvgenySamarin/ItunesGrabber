@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.itunesgrabber.ui.viewmodel.AlbumDetailViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/size_100dp"
+                android:layout_height="@dimen/size_100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:contentDescription="@string/DESC_ALBUM_IMAGE"
+                android:scaleType="centerCrop"
+                app:mutableUrl="@{viewModel.artworkUrl}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp">
+
+                <TextView
+                    style="@style/TextHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/PLACEHOLDER_ALBUM_TITLE" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextBody1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_weight="1"
+                    android:ellipsize="none"
+                    android:singleLine="false"
+                    app:mutableText="@{viewModel.collectionName}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp">
+
+                <TextView
+                    style="@style/TextHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/PLACEHOLDER_RELEASE_DATE" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextBody1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_weight="1"
+                    app:mutableText="@{viewModel.releaseDate}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp">
+
+                <TextView
+                    style="@style/TextHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/PLACEHOLDER_GENRE" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextBody1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_weight="1"
+                    app:mutableText="@{viewModel.primaryGenreName}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp">
+
+                <TextView
+                    style="@style/TextHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/PLACEHOLDER_ARTIST_NAME" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextBody1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_weight="1"
+                    app:mutableText="@{viewModel.artistName}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="@dimen/size_60dp"
+                    android:layout_height="@dimen/size_60dp"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:contentDescription="@string/DESC_SITE_ARTIST"
+                    android:src="@drawable/ic_public_black_24dp"
+                    android:theme="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:tint="@color/icons_base"
+                    app:onClickToUrl="@{viewModel.artistViewUrl}" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="@dimen/size_60dp"
+                    android:layout_height="@dimen/size_60dp"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:contentDescription="@string/DESC_SITE_COLLECTION"
+                    android:src="@drawable/ic_album_black_24dp"
+                    android:theme="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:tint="@color/icons_base"
+                    app:onClickToUrl="@{viewModel.collectionViewUrl}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp">
+
+                <TextView
+                    style="@style/TextHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/PLACEHOLDER_TRACK_COUNT" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextBody1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_weight="1"
+                    app:mutableText='@{viewModel.trackCount}' />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_48dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/padding_16dp"
+                android:paddingEnd="@dimen/padding_16dp">
+
+                <TextView
+                    style="@style/TextHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/PLACEHOLDER_PRICE" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextBody1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    app:mutableText="@{viewModel.collectionPrice}" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/TextBody1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    android:layout_weight="1"
+                    app:mutableText="@{viewModel.currency}"
+                    android:textColor="@color/text_accent" />
+            </LinearLayout>
+
+            <!-- copyright -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_48dp"
+                android:gravity="center"
+                app:mutableText="@{viewModel.copyright}"
+                android:textSize="@dimen/text_size_12sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.itunesgrabber.ui.viewmodel.AlbumsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="@dimen/size_28dp"
+            android:layout_height="@dimen/size_28dp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/background_accent"
+            android:indeterminateTint="@color/background_base"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:mutableVisibility="@{viewModel.loadingVisibility}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_in_lay_albums_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_16dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/DESC_SEARCH"
+                app:boxBackgroundMode="filled"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:endIconDrawable="@drawable/ic_search_black_24dp"
+                app:endIconMode="custom"
+                app:endIconTint="@color/icons_base"
+                app:helperTextEnabled="false"
+                app:hintEnabled="false"
+                app:onEndIconClick="@{() -> viewModel.onSearchClick()}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_in_albums_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_48dp"
+                    android:ellipsize="start"
+                    android:gravity="start"
+                    android:hint="@string/DESC_SEARCH"
+                    android:paddingStart="@dimen/padding_16dp"
+                    android:singleLine="true"
+                    android:text="@={viewModel.searchString}"
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_albums"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:adapter="@{viewModel.getAlbumsAdapter()}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="5" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

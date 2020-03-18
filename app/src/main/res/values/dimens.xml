@@ -1,0 +1,32 @@
+<!--
+Apps should only define a limited set of dimensions, which are constantly reused.
+<WHAT>_<WHERE>_<SIZE> :
+    <WHAT>  : It can be width(in dp), height (in dp), size (if width == height), margin(in dp),
+        padding(in dp), elevation(in dp). text_size(in sp), radius_corner(in dp) and others
+    <WHERE> : It can be any specific item or remove this section if used throughout the application.
+    <SIZE>  : It can be dp or sp.
+
+ @author EvgenySamarin
+ @since 20200314 v1
+-->
+<resources>
+    <dimen name="margin_16dp">16dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+
+
+    <dimen name="padding_16dp">16dp</dimen>
+    <dimen name="padding_8dp">8dp</dimen>
+
+
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_12sp">12sp</dimen>
+
+
+    <dimen name="size_100dp">100dp</dimen>
+    <dimen name="size_60dp">60dp</dimen>
+    <dimen name="size_28dp">28dp</dimen>
+
+
+    <dimen name="height_48dp">48dp</dimen>
+</resources>

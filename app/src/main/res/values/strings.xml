@@ -1,0 +1,49 @@
+<!--
+File contains a set of string constants. String name formatted by prefix and write in caps with
+snake_case, like below:
+<WHAT>_<WHERE>_<DESCRIPTION>, where:
+    <WHAT> : Describes a type of string constant. Can contain following values
+        TITLE - plain text which would be used in different Views
+        ACTION - typically used with buttons
+        PLACEHOLDER - default value, can be used with input text Views
+        HINT - if u need to help user understand what u want from him
+        ERROR - to display an errors
+        SERVICE - service text DON`T FOR USER, but for the other programmers
+        STUB - for different hardcode. DON`T USE IT INTO RELEASE BUILD
+        DESC - to support an accessibility
+
+    <WHERE> : describes a place where u want use the string. Usually its a type of View
+        note.: TITLE_MENU_ITEM_MAIN -> <WHAT>[TITLE]_<WHERE>[MENU_ITEM]_<DESCRIPTION>[MAIN]
+
+    <DESCRIPTION> : use it for specify View element
+
+ @author EvgenySamarin
+ @since 20200314 v1
+-->
+<resources>
+    <!-- BACKLOG name your app here -->
+    <!-- titles block -->
+    <string name="TITLE_APP_NAME">ITunesAlbums</string>
+    <string name="TITLE_TOOLBAR_ALBUMS">Список альбомов</string>
+    <string name="TITLE_TOOLBAR_ALBUM_DETAIL">Детальная информация</string>
+
+
+    <!-- placeholder block -->
+    <string name="PLACEHOLDER_ARTIST_NAME">Исполнитель:</string>
+    <string name="PLACEHOLDER_GENRE">Жанр:</string>
+    <string name="PLACEHOLDER_RELEASE_DATE">Дата выхода:</string>
+    <string name="PLACEHOLDER_ALBUM_TITLE">Название альбома:</string>
+    <string name="PLACEHOLDER_PRICE">Стоимость альбома:</string>
+    <string name="PLACEHOLDER_TRACK_COUNT">Количество треков:</string>
+
+
+    <!-- action block -->
+    <string name="ACTION_RETRY">Попробовать снова</string>
+
+
+    <!-- content description block for support accessibility -->
+    <string name="DESC_SITE_ARTIST">Перейти на сайт исполнителя</string>
+    <string name="DESC_SITE_COLLECTION">Перейти на страницу альбома</string>
+    <string name="DESC_SEARCH">Найти</string>
+    <string name="DESC_ALBUM_IMAGE">Картинка альбома</string>
+</resources>
